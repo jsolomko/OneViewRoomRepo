@@ -11,16 +11,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.oneviewroomapp.R;
 
 public class WordViewHolder extends RecyclerView.ViewHolder {
-    private final TextView wordItemView;
+    private final TextView wordItemView, repItem;
 
     public WordViewHolder(@NonNull View itemView) {
         super(itemView);
         wordItemView = itemView.findViewById(R.id.tv_Word);
+        repItem = itemView.findViewById(R.id.tv_rep);
     }
 
     //???
-    public void bind(String text) {
+    public void bind(String text, Integer rep) {
         wordItemView.setText(text);
+        repItem.setText(rep);
     }
 
     static WordViewHolder create(ViewGroup parent) {
