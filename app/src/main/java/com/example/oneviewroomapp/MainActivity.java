@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
         mWordViewModel = new ViewModelProvider(this).get(WordViewModel.class);
         mWordViewModel.getAllWords().observe(this, words -> {
             // Update the cached copy of the words in the adapter.
-              adapter.submitList(words);
+            //
+            adapter.submitList(words);
 
         });
 
@@ -44,12 +45,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void load(View view) {
         String wordToSend = ed_Word.getText().toString();
+
         String temp = ed_Rep.getText().toString();
-        int reps = Integer.parseInt(temp);
-        Word word = new Word(wordToSend, reps);
+        Word word = new Word(Integer.parseInt(wordToSend), Integer.parseInt(temp));
         mWordViewModel.insert(word);
-        Log.d("MyLog", String.valueOf(word.getRep()));
-        Log.d("MyLog", word.getWord());
+
     }
 
     public void delete(View view) {

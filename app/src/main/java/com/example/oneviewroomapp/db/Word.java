@@ -1,5 +1,6 @@
 package com.example.oneviewroomapp.db;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -7,20 +8,12 @@ import androidx.room.PrimaryKey;
 public class Word {
     @PrimaryKey(autoGenerate = true)
     private int id;
-    private String word;
+    private int word;
+    @ColumnInfo(name = "reps")
     private int rep;
 
-
-    public Word(String word, int rep) {
+    public Word(int word, int rep) {
         this.word = word;
-        this.rep = rep;
-    }
-
-    public int getRep() {
-        return rep;
-    }
-
-    public void setRep(int rep) {
         this.rep = rep;
     }
 
@@ -32,11 +25,19 @@ public class Word {
         this.id = id;
     }
 
-    public String getWord() {
+    public int getWord() {
         return word;
     }
 
-    public void setWord(String word) {
+    public void setWord(int word) {
         this.word = word;
+    }
+
+    public int getRep() {
+        return rep;
+    }
+
+    public void setRep(int rep) {
+        this.rep = rep;
     }
 }
