@@ -25,7 +25,7 @@
         android:layout_marginBottom="24dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="a word"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -49,5 +49,16 @@
         app:layout_constraintBottom_toTopOf="@+id/btn"
         app:layout_constraintEnd_toEndOf="@+id/btn"
         app:layout_constraintStart_toStartOf="@+id/btn" />
+
+    <EditText
+        android:id="@+id/ed_rep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/ed_Word"
+        app:layout_constraintEnd_toEndOf="@+id/ed_Word"
+        app:layout_constraintStart_toStartOf="@+id/ed_Word" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

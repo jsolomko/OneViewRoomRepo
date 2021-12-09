@@ -8,7 +8,8 @@ import androidx.room.RoomDatabase;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-@Database(entities = {Word.class},version = 1,exportSchema = false)
+
+@Database(entities = {Word.class}, version = 8, exportSchema = false)
 public abstract class WordDataBase extends RoomDatabase {
 
     ///Этот метод для передачи обьекта ДАО в репозиторий
@@ -28,6 +29,7 @@ public abstract class WordDataBase extends RoomDatabase {
                 if (INSTANCE == null) {
                     INSTANCE = Room
                             .databaseBuilder(context.getApplicationContext(), WordDataBase.class, "word_db")
+                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }
