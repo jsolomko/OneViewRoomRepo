@@ -8,11 +8,22 @@ import androidx.room.PrimaryKey;
 public class Word {
     @PrimaryKey(autoGenerate = true)
     private int id;
-    private int word;
+
+    private String word;
     @ColumnInfo(name = "reps")
     private int rep;
 
-    public Word(int word, int rep) {
+    public int getCounter() {
+        return counter;
+    }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
+    }
+
+    private int counter;
+
+    public Word(String word, int rep) {
         this.word = word;
         this.rep = rep;
     }
@@ -25,11 +36,11 @@ public class Word {
         this.id = id;
     }
 
-    public int getWord() {
+    public String getWord() {
         return word;
     }
 
-    public void setWord(int word) {
+    public void setWord(String word) {
         this.word = word;
     }
 

@@ -19,10 +19,10 @@ public class WordViewHolder extends RecyclerView.ViewHolder {
         repItem = itemView.findViewById(R.id.tv_rep);
     }
 
-    //???
-    public void bind(int text, int rep) {
+
+    public void bind(String text, int rep) {
         wordItemView.setText(text);
-        repItem.setText(rep);
+        repItem.setText(String.valueOf(rep));
     }
 
     static WordViewHolder create(ViewGroup parent) {

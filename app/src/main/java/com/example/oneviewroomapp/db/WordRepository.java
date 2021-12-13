@@ -26,7 +26,11 @@ public class WordRepository {
                 wordDao.insert(word));
     }
 
-   public void delete( ) {
+    public void delete() {
         wordDao.delete();
+    }
+
+    void update(Word word) {
+        wordDao.update(word);
     }
 }

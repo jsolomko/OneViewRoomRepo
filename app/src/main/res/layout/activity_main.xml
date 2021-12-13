@@ -24,10 +24,12 @@
         android:layout_marginLeft="32dp"
         android:layout_marginBottom="24dp"
         android:ems="10"
+        android:hint="enter a text"
         android:inputType="textPersonName"
-        android:text="a word"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/ed_rep"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/ed_rep" />
 
     <Button
         android:id="@+id/btn"
@@ -54,11 +56,13 @@
         android:id="@+id/ed_rep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginBottom="12dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:hint="enter an int"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/ed_Word"
-        app:layout_constraintEnd_toEndOf="@+id/ed_Word"
-        app:layout_constraintStart_toStartOf="@+id/ed_Word" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

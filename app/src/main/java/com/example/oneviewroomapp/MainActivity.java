@@ -1,5 +1,6 @@
 package com.example.oneviewroomapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.oneviewroomapp.db.Word;
+import com.example.oneviewroomapp.db.WordDao;
 import com.example.oneviewroomapp.db.WordDataBase;
 import com.example.oneviewroomapp.db.WordListAdapter;
 import com.example.oneviewroomapp.db.WordViewModel;
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         mWordViewModel.getAllWords().observe(this, words -> {
             // Update the cached copy of the words in the adapter.
             //
-           // adapter.submitList(words);
+            adapter.submitList(words);
 
         });
 
@@ -47,9 +49,13 @@ public class MainActivity extends AppCompatActivity {
         String wordToSend = ed_Word.getText().toString();
         String temp = ed_Rep.getText().toString();
 
-        Word word = new Word(Integer.parseInt(wordToSend), Integer.parseInt(temp));
-        mWordViewModel.insert(word);
-        Log.d("MyLog", String.valueOf(word.getWord()));
+        Word word = new Word(wordToSend, Integer.parseInt(temp));
+        String temp1 = word.getWord();
+        if (word.getWord().equals("test")) {
+            word.setRep(word.getRep() + Integer.parseInt(temp));
+        }
+       mWordViewModel.insert(word);
+        //mWordViewModel.update(word);
     }
 
     public void delete(View view) {
@@ -62,4 +68,6 @@ public class MainActivity extends AppCompatActivity {
         });
         t.start();
     }
+
+
 }
