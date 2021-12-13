@@ -20,8 +20,11 @@ public interface WordDao {
     @Query("DELETE FROM word")
     void delete();
 
-    @Update
+    @Update(entity = Word.class)
     void update(Word word);
+
+    @Query("UPDATE word SET reps = :reps WHERE id = :tid")
+    int customUpdate(int tid, int reps);
 
 
 }

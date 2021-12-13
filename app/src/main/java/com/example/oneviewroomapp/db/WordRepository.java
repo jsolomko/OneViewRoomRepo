@@ -27,10 +27,16 @@ public class WordRepository {
     }
 
     public void delete() {
-        wordDao.delete();
+        WordDataBase.EXECUTOR_SERVICE.execute(() ->
+                wordDao.delete());
     }
 
     void update(Word word) {
-        wordDao.update(word);
+        WordDataBase.EXECUTOR_SERVICE.execute(() ->
+                wordDao.update(word));
+    }
+    void customUpdate(int tid, int reps) {
+        WordDataBase.EXECUTOR_SERVICE.execute(() ->
+                wordDao.customUpdate(reps, tid));
     }
 }

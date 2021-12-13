@@ -30,8 +30,12 @@ public class WordViewModel extends AndroidViewModel {
     public void delete( ){
         repository.delete();
     }
+
     public void update(Word word){
         repository.update(word);
     }
 
+    public void customUpdate(int tid, int reps){
+        repository.customUpdate(reps,tid);
+    }
 }

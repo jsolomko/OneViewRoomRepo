@@ -22,6 +22,7 @@ import java.util.concurrent.ExecutorService;
 public class MainActivity extends AppCompatActivity {
     private WordViewModel mWordViewModel;
     EditText ed_Word, ed_Rep;
+    Word word;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,34 +41,26 @@ public class MainActivity extends AppCompatActivity {
             // Update the cached copy of the words in the adapter.
             //
             adapter.submitList(words);
-
         });
-
     }
 
     public void load(View view) {
         String wordToSend = ed_Word.getText().toString();
         String temp = ed_Rep.getText().toString();
+        if (wordToSend.equals("test")) {
+            //  word.setRep(word.getRep() + Integer.parseInt(temp));
+            // word = new Word(wordToSend, Integer.parseInt(temp));
 
-        Word word = new Word(wordToSend, Integer.parseInt(temp));
-        String temp1 = word.getWord();
-        if (word.getWord().equals("test")) {
-            word.setRep(word.getRep() + Integer.parseInt(temp));
+            mWordViewModel.customUpdate(1, 20);
+
+        } else {
+            word = new Word(wordToSend, Integer.parseInt(temp));
+            mWordViewModel.insert(word);
         }
-       mWordViewModel.insert(word);
-        //mWordViewModel.update(word);
     }
 
     public void delete(View view) {
-        Thread t = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                mWordViewModel.delete();
+        mWordViewModel.delete();
 
-            }
-        });
-        t.start();
     }
-
-
 }
