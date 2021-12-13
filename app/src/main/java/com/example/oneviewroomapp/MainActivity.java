@@ -17,13 +17,16 @@ import com.example.oneviewroomapp.db.WordDataBase;
 import com.example.oneviewroomapp.db.WordListAdapter;
 import com.example.oneviewroomapp.db.WordViewModel;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.concurrent.ExecutorService;
 
 public class MainActivity extends AppCompatActivity {
     private WordViewModel mWordViewModel;
     EditText ed_Word, ed_Rep;
-    Word word;
-
+    int counter = 0;
+    SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         final WordListAdapter adapter = new WordListAdapter(new WordListAdapter.WordDiff());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         mWordViewModel = new ViewModelProvider(this).get(WordViewModel.class);
         mWordViewModel.getAllWords().observe(this, words -> {
             // Update the cached copy of the words in the adapter.
@@ -45,16 +47,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void load(View view) {
+
+        counter++;
         String wordToSend = ed_Word.getText().toString();
         String temp = ed_Rep.getText().toString();
-        if (wordToSend.equals("test")) {
-            //  word.setRep(word.getRep() + Integer.parseInt(temp));
-            // word = new Word(wordToSend, Integer.parseInt(temp));
+        if (wordToSend.equals("A")) {
+           // Word word = new Word(wordToSend, Integer.parseInt(temp));
 
-            mWordViewModel.customUpdate(1, 20);
+            mWordViewModel.customUpdate(79,Integer.parseInt(temp), counter);
+            Log.d("MyLog", format.format(new Date()));
 
         } else {
-            word = new Word(wordToSend, Integer.parseInt(temp));
+            Word word = new Word(wordToSend, Integer.parseInt(temp));
             mWordViewModel.insert(word);
         }
     }

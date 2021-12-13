@@ -35,8 +35,8 @@ public class WordRepository {
         WordDataBase.EXECUTOR_SERVICE.execute(() ->
                 wordDao.update(word));
     }
-    void customUpdate(int tid, int reps) {
+    void customUpdate(int tid, int reps, int counter ) {
         WordDataBase.EXECUTOR_SERVICE.execute(() ->
-                wordDao.customUpdate(reps, tid));
+                wordDao.customUpdate(reps, tid, counter));
     }
 }

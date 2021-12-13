@@ -35,7 +35,7 @@ public class WordViewModel extends AndroidViewModel {
         repository.update(word);
     }
 
-    public void customUpdate(int tid, int reps){
-        repository.customUpdate(reps,tid);
+    public void customUpdate(int tid, int reps, int counter){
+        repository.customUpdate(reps,tid,counter);
     }
 }
