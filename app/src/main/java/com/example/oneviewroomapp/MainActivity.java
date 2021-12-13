@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     EditText ed_Word, ed_Rep;
     int counter = 0;
     SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,18 +48,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void load(View view) {
-
         counter++;
         String wordToSend = ed_Word.getText().toString();
         String temp = ed_Rep.getText().toString();
-        if (wordToSend.equals("A")) {
-           // Word word = new Word(wordToSend, Integer.parseInt(temp));
-
-            mWordViewModel.customUpdate(79,Integer.parseInt(temp), counter);
+        Word words = new Word("s", 1, "10.12.2021");
+        //Пытаюсь здесь получить дату из обьектов в базе
+        if (mWordViewModel.getAllWords().getValue()) {
+            mWordViewModel.customUpdate(79, Integer.parseInt(temp), counter);
             Log.d("MyLog", format.format(new Date()));
-
         } else {
-            Word word = new Word(wordToSend, Integer.parseInt(temp));
+            Word word = new Word(wordToSend, Integer.parseInt(temp), format.format(new Date()));
             mWordViewModel.insert(word);
         }
     }

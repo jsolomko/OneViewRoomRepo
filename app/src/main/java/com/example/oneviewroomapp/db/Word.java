@@ -12,6 +12,23 @@ public class Word {
     private String word;
     @ColumnInfo(name = "reps")
     private int rep;
+    @ColumnInfo(name = "Date")
+    private String date;
+
+
+    public Word(String word, int rep, String date) {
+        this.word = word;
+        this.rep = rep;
+        this.date = date;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public int getCounter() {
         return counter;
@@ -23,10 +40,6 @@ public class Word {
 
     private int counter;
 
-    public Word(String word, int rep) {
-        this.word = word;
-        this.rep = rep;
-    }
 
     public int getId() {
         return id;
