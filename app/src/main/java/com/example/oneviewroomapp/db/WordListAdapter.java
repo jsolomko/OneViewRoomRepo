@@ -21,7 +21,7 @@ public class WordListAdapter extends ListAdapter<Word, WordViewHolder> {
     @Override
     public void onBindViewHolder(WordViewHolder holder, int position) {
         Word current = getItem(position);
-        holder.bind(current.getWord(), current.getRep());
+        holder.bind(current.getWord(), current.getRep(), current.getCounter(), current.getDate());
     }
 
     public static class WordDiff extends DiffUtil.ItemCallback<Word> {

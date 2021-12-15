@@ -23,8 +23,8 @@ public interface WordDao {
     @Update()
     void update(Word word);
 
-    @Query("UPDATE word SET reps = :reps, counter = :count WHERE id = :tid")
-    int customUpdate(int tid, int reps, int count);
+    @Query("UPDATE word SET reps = :reps, counter = :count WHERE Date = :date")
+    int customUpdate(String date, int reps, int count);
 
 
 }

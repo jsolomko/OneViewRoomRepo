@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">OneViewRoomApp</string>
+    <string name="pull_ups">ПОДТЯГИВАНИЯ</string>
+    <string name="set_pull">Ввести колличество</string>
+    <string name="rep_counter">Повторения</string>
+    <string name="save_reps">Сохранить</string>
+    <string name="delete_reps">Очистить данные</string>
+    <string name="to_push">Отжимания</string>
+
 </resources>

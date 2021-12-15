@@ -20,6 +20,7 @@ import com.example.oneviewroomapp.db.WordViewModel;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     EditText ed_Word, ed_Rep;
     int counter = 0;
     SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+    int count = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,22 +50,49 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void load(View view) {
-        counter++;
+        //  counter++;
         String wordToSend = ed_Word.getText().toString();
         String temp = ed_Rep.getText().toString();
-        Word words = new Word("s", 1, "10.12.2021");
+        //  Word words = new Word("w", 2, "sd");
         //Пытаюсь здесь получить дату из обьектов в базе
-        if (mWordViewModel.getAllWords().getValue()) {
-            mWordViewModel.customUpdate(79, Integer.parseInt(temp), counter);
-            Log.d("MyLog", format.format(new Date()));
+        if (mWordViewModel.getAllWords().getValue().isEmpty()) {
+            Word words = new Word(wordToSend, Integer.parseInt(temp), format.format(new Date()));
+            mWordViewModel.insert(words);
+            words.setCounter(count);
         } else {
-            Word word = new Word(wordToSend, Integer.parseInt(temp), format.format(new Date()));
-            mWordViewModel.insert(word);
+            for (Word word : mWordViewModel.getAllWords().getValue()) {
+                if (word.getDate().equals(format.format(new Date()))) {
+                    int x = word.getRep();
+                    int y = Integer.parseInt(temp);
+                    int sum = x + y;
+                    int c = word.getCounter();
+                    int counter = count + c;
+                    mWordViewModel.customUpdate(format.format(new Date()), sum, counter);
+                    break;
+                } else {
+                    Word wordTemp = new Word(wordToSend, Integer.parseInt(temp), format.format(new Date()));
+                    mWordViewModel.insert(wordTemp);
+                    break;
+                }
+            }
         }
+
+
+//        if (words.getDate().equals(format.format(new Date()))) {
+//            int x = words.getRep();
+//            Log.d("MyLog", String.valueOf(words.getRep()));
+//            int y = Integer.parseInt(temp);
+//            int sum = x + y;
+//            Log.d("MyLog", String.valueOf(sum));
+//            mWordViewModel.customUpdate(format.format(new Date()), sum, 2);
+//        } else {
+//            Word wordTemp = new Word(wordToSend, Integer.parseInt(temp), format.format(new Date()));
+//            mWordViewModel.insert(wordTemp);
+//        }
     }
+
 
     public void delete(View view) {
         mWordViewModel.delete();
-
     }
 }

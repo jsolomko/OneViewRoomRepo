@@ -16,6 +16,7 @@ public class Word {
     private String date;
 
 
+
     public Word(String word, int rep, String date) {
         this.word = word;
         this.rep = rep;
