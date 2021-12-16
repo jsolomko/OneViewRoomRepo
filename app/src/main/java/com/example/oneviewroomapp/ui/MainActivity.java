@@ -1,27 +1,21 @@
 package com.example.oneviewroomapp;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.oneviewroomapp.db.Word;
-import com.example.oneviewroomapp.db.WordDao;
-import com.example.oneviewroomapp.db.WordDataBase;
+import com.example.oneviewroomapp.entities.Word;
 import com.example.oneviewroomapp.db.WordListAdapter;
 import com.example.oneviewroomapp.db.WordViewModel;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.Objects;
-import java.util.concurrent.ExecutorService;
 
 public class MainActivity extends AppCompatActivity {
     private WordViewModel mWordViewModel;
@@ -78,5 +72,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void delete(View view) {
         mWordViewModel.delete();
+    }
+
+    public void toPush(View view) {
+        Intent i = new Intent(MainActivity.this, PushActivity.class);
+        startActivity(i);
     }
 }
