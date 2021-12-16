@@ -1,4 +1,4 @@
-package com.example.oneviewroomapp.db;
+package com.example.oneviewroomapp.entities;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

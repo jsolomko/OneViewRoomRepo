@@ -1,4 +1,4 @@
-package com.example.oneviewroomapp;
+package com.example.oneviewroomapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.oneviewroomapp.R;
 import com.example.oneviewroomapp.entities.Push;
 import com.example.oneviewroomapp.db.WordViewModel;
 
@@ -25,7 +26,7 @@ public class PushActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_push2);
+        setContentView(R.layout.activity_push);
         init();
 //        mWordViewModel.getAllPush().observe(this, pushes -> {
 //            for (Push p : pushes) {

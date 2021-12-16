@@ -1,4 +1,4 @@
-package com.example.oneviewroomapp;
+package com.example.oneviewroomapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.oneviewroomapp.R;
 import com.example.oneviewroomapp.entities.Word;
 import com.example.oneviewroomapp.db.WordListAdapter;
 import com.example.oneviewroomapp.db.WordViewModel;

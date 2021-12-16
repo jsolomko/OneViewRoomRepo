@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#A88ACC8C"
+    android:background="#A8BBC8BB"
     android:orientation="vertical"
     android:padding="10dp">
 
@@ -19,12 +19,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/pull_ups"
-            android:textSize="24sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_rep"
-            android:layout_width="wrap_content"
+            android:layout_width="125dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
@@ -50,7 +50,7 @@
 
         <TextView
             android:id="@+id/tv_rep_counter"
-            android:layout_width="wrap_content"
+            android:layout_width="56dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
@@ -76,6 +76,12 @@
         android:gravity="center|center_vertical"
         android:text="Дата"
         android:textSize="18sp" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/purple_500" />
 
 
 </LinearLayout>
