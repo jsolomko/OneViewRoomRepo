@@ -12,10 +12,12 @@
         android:layout_width="0dp"
         android:layout_height="300dp"
         android:layout_margin="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/ed_rep"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/recycler_item" />
 
     <EditText
@@ -44,21 +46,24 @@
         android:text="@string/save_reps"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_delete" />
+        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintStart_toEndOf="@+id/btn_delete"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.823" />
 
     <Button
         android:id="@+id/btn_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
         android:layout_marginBottom="16dp"
         android:onClick="delete"
         android:text="@string/delete_reps"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_Word"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.357" />
 
     <EditText
         android:id="@+id/ed_rep"
@@ -77,14 +82,12 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
-        android:layout_marginBottom="20dp"
         android:text="@string/to_push"
-        app:layout_constraintBottom_toTopOf="@+id/ed_rep"
+        app:layout_constraintBottom_toBottomOf="@+id/ed_rep"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/ed_rep"
-        app:layout_constraintTop_toBottomOf="@+id/recycler"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.305"
+        app:layout_constraintStart_toEndOf="@+id/ed_rep"
+        app:layout_constraintTop_toTopOf="@+id/ed_rep"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

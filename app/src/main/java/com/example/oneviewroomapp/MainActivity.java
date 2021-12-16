@@ -50,11 +50,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void load(View view) {
-        //  counter++;
         String wordToSend = ed_Word.getText().toString();
         String temp = ed_Rep.getText().toString();
-        //  Word words = new Word("w", 2, "sd");
-        //Пытаюсь здесь получить дату из обьектов в базе
+        boolean isDate = false;
         if (mWordViewModel.getAllWords().getValue().isEmpty()) {
             Word words = new Word(wordToSend, Integer.parseInt(temp), format.format(new Date()));
             mWordViewModel.insert(words);
@@ -68,29 +66,15 @@ public class MainActivity extends AppCompatActivity {
                     int c = word.getCounter();
                     int counter = count + c;
                     mWordViewModel.customUpdate(format.format(new Date()), sum, counter);
-                    break;
-                } else {
-                    Word wordTemp = new Word(wordToSend, Integer.parseInt(temp), format.format(new Date()));
-                    mWordViewModel.insert(wordTemp);
-                    break;
+                    isDate = true;
                 }
             }
+            if (!isDate) {
+                Word wordTemp = new Word(wordToSend, Integer.parseInt(temp), format.format(new Date()));
+                mWordViewModel.insert(wordTemp);
+            }
         }
-
-
-//        if (words.getDate().equals(format.format(new Date()))) {
-//            int x = words.getRep();
-//            Log.d("MyLog", String.valueOf(words.getRep()));
-//            int y = Integer.parseInt(temp);
-//            int sum = x + y;
-//            Log.d("MyLog", String.valueOf(sum));
-//            mWordViewModel.customUpdate(format.format(new Date()), sum, 2);
-//        } else {
-//            Word wordTemp = new Word(wordToSend, Integer.parseInt(temp), format.format(new Date()));
-//            mWordViewModel.insert(wordTemp);
-//        }
     }
-
 
     public void delete(View view) {
         mWordViewModel.delete();
