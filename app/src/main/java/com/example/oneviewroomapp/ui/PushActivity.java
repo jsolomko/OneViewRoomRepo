@@ -28,6 +28,7 @@ public class PushActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_push);
         init();
+
 //        mWordViewModel.getAllPush().observe(this, pushes -> {
 //            for (Push p : pushes) {
 //                tvPush.setText(String.valueOf(p.getPushCount()));
