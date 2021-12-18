@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.SystemClock;
 import android.view.View;
 import android.widget.Chronometer;
@@ -15,6 +16,8 @@ import com.example.oneviewroomapp.R;
 import com.example.oneviewroomapp.entities.Push;
 import com.example.oneviewroomapp.db.WordViewModel;
 
+import java.util.Locale;
+
 public class PushActivity extends AppCompatActivity {
     EditText edPush;
     TextView tvPush;
@@ -22,66 +25,98 @@ public class PushActivity extends AppCompatActivity {
     private Chronometer chronometer;
     private long pauseOffset;
     private boolean running;
-
+    //В переменных seconds и running хранится коли-чество прошедших секунд и флаг работы секундомера.
+    private int seconds = 0;
+    private boolean wasRunning;
+    private TextView timeView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_push);
         init();
 
-//        mWordViewModel.getAllPush().observe(this, pushes -> {
-//            for (Push p : pushes) {
-//                tvPush.setText(String.valueOf(p.getPushCount()));
-//            }
-//        });
-
-
-        ///Таймер
-        chronometer = findViewById(R.id.chronometer);
-        chronometer.setFormat("Time: %s");
-        chronometer.setBase(SystemClock.elapsedRealtime());
-
-        chronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
-            @Override
-            public void onChronometerTick(Chronometer chronometer) {
-                if ((SystemClock.elapsedRealtime() - chronometer.getBase()) >= 100000) {
-                    chronometer.setBase(SystemClock.elapsedRealtime());
-                    Toast.makeText(PushActivity.this, "Bing!", Toast.LENGTH_SHORT).show();
-                }
+        mWordViewModel.getAllPush().observe(this, pushes -> {
+            for (Push p : pushes) {
+                tvPush.setText("Отжимания: " + p.getPushCount() + "\n" + "Ваше время: " + p.getTime());
             }
         });
 
-    }
-
-    public void startChronometer(View v) {
-        if (!running) {
-            chronometer.setBase(SystemClock.elapsedRealtime() - pauseOffset);
-            chronometer.start();
-            running = true;
+        ///Таймер
+        if (savedInstanceState != null) {
+            seconds = savedInstanceState.getInt("seconds");
+            running = savedInstanceState.getBoolean("running");
+            wasRunning = savedInstanceState.getBoolean("wasRunning");
         }
+        runTimer();
+
     }
 
-    public void pauseChronometer(View v) {
-        if (running) {
-            chronometer.stop();
-            pauseOffset = SystemClock.elapsedRealtime() - chronometer.getBase();
+        @Override
+        public void onSaveInstanceState(Bundle savedInstanceState) {
+            super.onSaveInstanceState(savedInstanceState);
+            savedInstanceState.putInt("seconds", seconds);
+            savedInstanceState.putBoolean("running", running);
+            savedInstanceState.putBoolean("wasRunning", wasRunning);
+        }
 
-            tvPush.setText(String.valueOf(pauseOffset));
+
+        @Override
+        protected void onPause() {
+            super.onPause();
+            wasRunning = running;
             running = false;
         }
-    }
 
-    public void resetChronometer(View v) {
-        chronometer.setBase(SystemClock.elapsedRealtime());
-        pauseOffset = 0;
-    }
+        @Override
+        protected void onResume() {
+            super.onResume();
+            if (wasRunning) {
+                running = true;
+            }
+        }
+        //Start the stopwatch running when the Start button is clicked.
+        public void onClickStart(View view) {
+            running = true;
+        }
 
+        //Stop the stopwatch running when the Stop button is clicked.
+        public void onClickStop(View view) {
+            running = false;
+        }
 
+        //Reset the stopwatch when the Reset button is clicked.
+        public void onClickReset(View view){
+            running = false;
+            seconds = 0;
+            tvPush.setText("");
+        }
+
+        //Обновление таймера
+        private void runTimer(){
+            timeView = findViewById(R.id.time_view);
+            final Handler handler = new Handler();
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    int hours = seconds/3600;
+                    int minutes = (seconds%3600)/60;
+                    int secs = seconds%60;
+                    String time = String.format(Locale.getDefault(),"%d:%02d:%02d", hours, minutes, secs );
+                    //Задать текст надписи
+                    timeView.setText(time);
+                    if (running){
+                        seconds++;
+                    }
+                    handler.postDelayed(this, 1000);
+                }
+            });
+        }
     //КОНЕЦ ТАЙМЕРА
 
     public void savePush(View view) {
         edPush.getText();
-        Push push = new Push("фывфыв", Integer.parseInt(edPush.getText().toString()));
+        String time = timeView.getText().toString();
+        Push push = new Push(time, Integer.parseInt(edPush.getText().toString()));
         mWordViewModel.insert(push);
 
     }

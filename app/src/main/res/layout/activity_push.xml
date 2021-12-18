@@ -17,39 +17,49 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
-        <Chronometer
-            android:id="@+id/chronometer"
+
+        <TextView
+            android:id="@+id/time_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="36sp" />
+            android:layout_gravity="center_horizontal"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:textSize="56sp"  />
 
         <Button
+            android:id="@+id/start_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="startChronometer"
-            android:text="Start"
-            android:textSize="30sp" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:onClick="onClickStart"
+            android:text="СТАРТ"  />
 
         <Button
+            android:id="@+id/stop_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="pauseChronometer"
-            android:text="Pause"
-            android:textSize="30sp" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:onClick="onClickStop"
+            android:text="СТОП"  />
 
         <Button
+            android:id="@+id/reset_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="resetChronometer"
-            android:text="Reset"
-            android:textSize="30sp" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:onClick="onClickReset"
+            android:text="РЕСЕТ"  />
+
 
         <TextView
             android:id="@+id/tvPush"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:textSize="24sp"
+            android:textSize="14sp"
             tools:ignore="MissingConstraints" />
 
         <EditText
