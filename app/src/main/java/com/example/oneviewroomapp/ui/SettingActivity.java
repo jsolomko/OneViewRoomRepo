@@ -30,5 +30,7 @@ public class SettingActivity extends AppCompatActivity {
             //
             adapter.submitList(words);
         });
+
+        //22
     }
 }
