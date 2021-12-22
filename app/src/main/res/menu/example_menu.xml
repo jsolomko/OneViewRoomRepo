@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_push"
+        android:title="@string/do_push"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/item2"
+        android:title="@string/stat_pulls"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/item3"
+        android:title="@string/stat_pushes"
+        app:showAsAction="never">
+    </item>
+</menu>
