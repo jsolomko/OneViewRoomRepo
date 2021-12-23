@@ -1,17 +1,23 @@
 package com.example.oneviewroomapp.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.oneviewroomapp.MainActivity;
 import com.example.oneviewroomapp.R;
 import com.example.oneviewroomapp.entities.Push;
 import com.example.oneviewroomapp.db.WordViewModel;
@@ -51,6 +57,32 @@ public class PushActivity extends AppCompatActivity {
 
     }
 
+
+    //МЕНЮ
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.example_menu, menu);
+        return true;
+    }
+    //Листнер нажатий в меню
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.item_push:
+                Intent intent = new Intent(PushActivity.this, PushActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.item2:
+                Intent i = new Intent(PushActivity.this, SettingActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.item3:
+                Toast.makeText(this, "PIP", Toast.LENGTH_SHORT).show();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
         @Override
         public void onSaveInstanceState(Bundle savedInstanceState) {
             super.onSaveInstanceState(savedInstanceState);
