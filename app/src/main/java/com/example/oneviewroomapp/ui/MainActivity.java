@@ -21,7 +21,6 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
     private WordViewModel mWordViewModel;
     EditText ed_Word, ed_Rep;
-    int counter = 0;
     SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
     int count = 1;
 
@@ -66,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             }
             if (!isDate) {
                 Word wordTemp = new Word(wordToSend, Integer.parseInt(temp), format.format(new Date()));
+                wordTemp.setCounter(count);
                 mWordViewModel.insert(wordTemp);
             }
         }
