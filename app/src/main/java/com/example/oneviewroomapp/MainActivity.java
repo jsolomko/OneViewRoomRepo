@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void doDa() {
+    }
 
     //МЕНЮ
     @Override
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.example_menu, menu);
         return true;
     }
+
     //Листнер нажатий в меню
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -107,8 +110,6 @@ public class MainActivity extends AppCompatActivity {
     public void delete(View view) {
         mWordViewModel.delete();
     }
-
-
 
 
 }
