@@ -35,5 +35,10 @@ public class WordViewHolder extends RecyclerView.ViewHolder {
         return new WordViewHolder(view);
     }
 
+    static WordViewHolder createOption(ViewGroup parent) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.recycler_item, parent, false);
+        return new WordViewHolder(view);
+    }
 
 }

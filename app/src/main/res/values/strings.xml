@@ -6,5 +6,14 @@
     <string name="save_reps">Сохранить</string>
     <string name="delete_reps">Очистить данные</string>
     <string name="to_push">Отжимания</string>
+    <string name="do_push">Отжиматься</string>
+    <string name="to_settings">Опции</string>
+
+
+
+    <string name="stat_pulls">Статистика подтягиваний</string>
+    <string name="stat_pushes">Статистика отжиманий</string>
+
+
 
 </resources>
