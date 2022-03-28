@@ -1,4 +1,4 @@
-package com.example.oneviewroomapp;
+package com.example.oneviewroomapp.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,11 +15,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.oneviewroomapp.R;
 import com.example.oneviewroomapp.entities.Word;
 import com.example.oneviewroomapp.db.WordListAdapter;
 import com.example.oneviewroomapp.db.WordViewModel;
-import com.example.oneviewroomapp.ui.PushActivity;
-import com.example.oneviewroomapp.ui.SettingActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -70,7 +69,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
                 return true;
             case R.id.item3:
-                Toast.makeText(this, "PIP", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "В разработке", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.item4:
+                mWordViewModel.delete();
                 return true;
         }
         return super.onOptionsItemSelected(item);

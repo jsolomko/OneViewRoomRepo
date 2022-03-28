@@ -10,10 +10,12 @@
     <string name="to_settings">Опции</string>
 
 
-
     <string name="stat_pulls">Статистика подтягиваний</string>
     <string name="stat_pushes">Статистика отжиманий</string>
-
+    <string name="delete">Очистить данные</string>
+    <string name="dashboard">DASHBOARD</string>
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Close</string>
 
 
 </resources>

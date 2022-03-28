@@ -16,7 +16,7 @@ public interface WordDao {
     @Insert(entity = Word.class)
     void insert(Word word);
 
-    @Query("SELECT * FROM word")
+    @Query("SELECT * FROM word ORDER by Date DESC")
     LiveData<List<Word>> getWord();
 
     @Query("DELETE FROM word")

@@ -11,10 +11,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.TableLayout;
 import android.widget.Toast;
 
-import com.example.oneviewroomapp.MainActivity;
 import com.example.oneviewroomapp.R;
 import com.example.oneviewroomapp.db.WordListAdapter;
 import com.example.oneviewroomapp.db.WordViewModel;
