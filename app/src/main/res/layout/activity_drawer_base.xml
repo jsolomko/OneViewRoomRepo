@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     tools:context=".ui.DrawerBaseActivity"
-    tools:openDrawer="start">
+    tools:openDrawer="start"
+    android:fitsSystemWindows="true"
+    >
 
     <include
         layout="@layout/content_layout"
@@ -19,5 +20,7 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/main_drawer_header"
-        app:menu="@menu/main_drawer_menu"/>
+        app:menu="@menu/main_drawer_menu"
+        android:layout_gravity="start"/>
+
 </androidx.drawerlayout.widget.DrawerLayout>

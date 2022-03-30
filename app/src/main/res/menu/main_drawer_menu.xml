@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<group android:checkableBehavior="single">
-    <item android:id="@+id/nav_custom"
-        android:icon="@drawable/ic_baseline_dashboard_24"
-        android:title="custom">
-    </item>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_custom"
+            android:icon="@drawable/ic_baseline_dashboard_24"
+            android:title="custom"></item>
 
-    <item android:id="@+id/nav_custom2"
-        android:icon="@drawable/ic_baseline_dashboard_24"
-        android:title="custom2">
-    </item>
-</group>
+        <item
+            android:id="@+id/nav_custom2"
+            android:icon="@drawable/ic_baseline_dashboard_24"
+            android:title="custom2"></item>
+    </group>
 </menu>
