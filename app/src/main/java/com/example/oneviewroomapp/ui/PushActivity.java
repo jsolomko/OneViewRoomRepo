@@ -147,7 +147,7 @@ public class PushActivity extends AppCompatActivity {
         edPush.getText();
         String time = timeView.getText().toString();
         Push push = new Push(time, Integer.parseInt(edPush.getText().toString()));
-        mWordViewModel.insert(push);
+//        mWordViewModel.insert(push);
 
     }
 

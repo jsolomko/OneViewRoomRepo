@@ -53,35 +53,38 @@ public class MainActivity extends DrawerBaseActivity {
         });
     }
 
+    public void doDa() {
+    }
 
-    //МЕНЮ
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.example_menu, menu);
-//        return true;
-//    }
-    //Листнер нажатий в меню
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.item_push:
-//                Intent intent = new Intent(MainActivity.this, PushActivity.class);
-//                startActivity(intent);
-//                return true;
-//            case R.id.item2:
-//                Intent i = new Intent(MainActivity.this, SettingActivity.class);
-//                startActivity(i);
-//                return true;
-//            case R.id.item3:
-//                Toast.makeText(this, "В разработке", Toast.LENGTH_SHORT).show();
-//                return true;
-//            case R.id.item4:
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.example_menu, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.item_push:
+                Intent intent = new Intent(MainActivity.this, PushActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.item2:
+                Intent i = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.item3:
+                Toast.makeText(this, "В разработке", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.item4:
 //                mWordViewModel.delete();
-//                return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     public void load(View view) {
         String wordToSend = ed_Word.getText().toString();
@@ -111,11 +114,9 @@ public class MainActivity extends DrawerBaseActivity {
         }
     }
 
-    public void delete(View view) {
-        mWordViewModel.delete();
-    }
-
-
+//    public void delete(View view) {
+//        mWordViewModel.delete();
+//    }
 
 
 }

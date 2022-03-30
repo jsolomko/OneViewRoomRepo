@@ -11,6 +11,7 @@ import java.util.List;
 
 public class WordRepository {
     private WordDao wordDao;
+    private PushDao pushDao;
     private LiveData<List<Word>> AllWord;
     private LiveData<List<Push>> allPush;
 
@@ -18,7 +19,7 @@ public class WordRepository {
         WordDataBase db = WordDataBase.getINSTANCE(application);
         wordDao = db.wordDao();
         AllWord = wordDao.getWord();
-        allPush = wordDao.getPush();
+        allPush = pushDao.getPush();
     }
 
     //Возаращает то, что указанов в DAO то есть LiveData
@@ -36,15 +37,15 @@ public class WordRepository {
                 wordDao.insert(word));
     }
 
-    void insert(Push push) {
-        WordDataBase.EXECUTOR_SERVICE.execute(() ->
-                wordDao.insert(push));
-    }
-
-    public void delete() {
-        WordDataBase.EXECUTOR_SERVICE.execute(() ->
-                wordDao.delete());
-    }
+//    void insert(Push push) {
+//        WordDataBase.EXECUTOR_SERVICE.execute(() ->
+//                wordDao.insert(push));
+//    }
+//
+//    public void delete() {
+//        WordDataBase.EXECUTOR_SERVICE.execute(() ->
+//                wordDao.delete());
+//    }
 
     void update(Word word) {
         WordDataBase.EXECUTOR_SERVICE.execute(() ->

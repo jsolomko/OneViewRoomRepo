@@ -34,13 +34,13 @@ public class WordViewModel extends AndroidViewModel {
     public void insert(Word word) {
         repository.insert(word);
     }
-
-    public void insert(Push push) {
-        repository.insert(push);
-    }
-    public void delete() {
-        repository.delete();
-    }
+//
+//    public void insert(Push push) {
+//        repository.insert(push);
+//    }
+//    public void delete() {
+//        repository.delete();
+//    }
 
     public void update(Word word) {
         repository.update(word);
