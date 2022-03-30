@@ -44,6 +44,10 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
         drawerLayout.closeDrawer(GravityCompat.START);
         switch (item.getItemId()){
             case R.id.nav_custom:
+                startActivity(new Intent(this,CustomPullActivity.class));
+                overridePendingTransition(0,0);
+                break;
+            case R.id.nav_custom2:
                 startActivity(new Intent(this,MainActivity.class));
                 overridePendingTransition(0,0);
                 break;

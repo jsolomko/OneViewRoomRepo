@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OneViewRoomApp">
         <activity
-            android:name=".ui.CustomPushActivity"
+            android:name=".ui.CustomPullActivity"
             android:exported="false" />
         <activity android:name=".ui.DrawerBaseActivity" />
         <activity android:name=".ui.DashboardActivity">

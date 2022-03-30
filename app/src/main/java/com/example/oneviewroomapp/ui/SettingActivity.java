@@ -14,7 +14,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.oneviewroomapp.R;
-import com.example.oneviewroomapp.db.WordListAdapter;
+import com.example.oneviewroomapp.adapters.WordListAdapter;
 import com.example.oneviewroomapp.db.WordViewModel;
 
 public class SettingActivity extends AppCompatActivity {

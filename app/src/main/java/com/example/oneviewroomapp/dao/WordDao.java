@@ -1,4 +1,4 @@
-package com.example.oneviewroomapp.db;
+package com.example.oneviewroomapp.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;

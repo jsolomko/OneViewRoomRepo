@@ -1,7 +1,6 @@
 package com.example.oneviewroomapp.ui;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,7 +17,7 @@ import android.widget.Toast;
 import com.example.oneviewroomapp.R;
 import com.example.oneviewroomapp.databinding.ActivityMainBinding;
 import com.example.oneviewroomapp.entities.Word;
-import com.example.oneviewroomapp.db.WordListAdapter;
+import com.example.oneviewroomapp.adapters.WordListAdapter;
 import com.example.oneviewroomapp.db.WordViewModel;
 
 import java.text.SimpleDateFormat;
@@ -55,33 +54,33 @@ public class MainActivity extends DrawerBaseActivity {
 
 
     //МЕНЮ
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.example_menu, menu);
-//        return true;
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.example_menu, menu);
+        return true;
+    }
     //Листнер нажатий в меню
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.item_push:
-//                Intent intent = new Intent(MainActivity.this, PushActivity.class);
-//                startActivity(intent);
-//                return true;
-//            case R.id.item2:
-//                Intent i = new Intent(MainActivity.this, SettingActivity.class);
-//                startActivity(i);
-//                return true;
-//            case R.id.item3:
-//                Toast.makeText(this, "В разработке", Toast.LENGTH_SHORT).show();
-//                return true;
-//            case R.id.item4:
-//                mWordViewModel.delete();
-//                return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.item_push:
+                Intent intent = new Intent(MainActivity.this, PushActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.item2:
+                Intent i = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.item3:
+                Toast.makeText(this, "В разработке", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.item4:
+                mWordViewModel.delete();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     public void load(View view) {
         String wordToSend = ed_Word.getText().toString();

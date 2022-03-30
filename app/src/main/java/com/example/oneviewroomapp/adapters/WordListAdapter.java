@@ -1,4 +1,4 @@
-package com.example.oneviewroomapp.db;
+package com.example.oneviewroomapp.adapters;
 
 import android.view.ViewGroup;
 
