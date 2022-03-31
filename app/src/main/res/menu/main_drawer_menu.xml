@@ -10,5 +10,9 @@
             android:id="@+id/nav_custom2"
             android:icon="@drawable/ic_baseline_dashboard_24"
             android:title="Статистика подтягиваний"></item>
+        <item
+            android:id="@+id/nav_note"
+            android:icon="@drawable/ic_baseline_dashboard_24"
+            android:title="Заметки"></item>
     </group>
 </menu>

@@ -6,18 +6,22 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import com.example.oneviewroomapp.dao.NoteDao;
 import com.example.oneviewroomapp.dao.WordDao;
 import com.example.oneviewroomapp.entities.Push;
 import com.example.oneviewroomapp.entities.Word;
+import com.example.oneviewroomapp.entities.Note;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Word.class, Push.class}, version = 12, exportSchema = false)
+@Database(entities = {Word.class, Push.class, Note.class}, version = 13, exportSchema = false)
 public abstract class WordDataBase extends RoomDatabase {
 
     ///Этот метод для передачи обьекта ДАО в репозиторий
     public abstract WordDao wordDao();
+
+    public abstract NoteDao noteDao();
 
     public static volatile WordDataBase INSTANCE;
     public static final int NUMBER_OF_THREADS = 4;

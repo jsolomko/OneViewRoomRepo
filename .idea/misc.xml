@@ -3,20 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/User/AndroidStudioProjects/OneViewRoomRepo/app/src/main/res/drawable/ic_baseline_dashboard_24.xml" value="0.3828125" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/OneViewRoomRepo/app/src/main/res/layout/activity_custom_pull.xml" value="0.24895833333333334" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/OneViewRoomRepo/app/src/main/res/layout/activity_custom_push.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/OneViewRoomRepo/app/src/main/res/layout/activity_dashboard.xml" value="0.35260416666666666" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/OneViewRoomRepo/app/src/main/res/layout/activity_drawer_base.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/OneViewRoomRepo/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/OneViewRoomRepo/app/src/main/res/layout/activity_push.xml" value="0.16979166666666667" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/OneViewRoomRepo/app/src/main/res/layout/activity_setting.xml" value="0.16979166666666667" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/OneViewRoomRepo/app/src/main/res/layout/content_layout.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/OneViewRoomRepo/app/src/main/res/layout/main_drawer_header.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/OneViewRoomRepo/app/src/main/res/layout/recycler_item.xml" value="0.33" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/OneViewRoomRepo/app/src/main/res/layout/recycler_item2.xml" value="0.16979166666666667" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/OneViewRoomRepo/app/src/main/res/menu/example_menu.xml" value="0.33" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/OneViewRoomRepo/app/src/main/res/menu/main_drawer_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Eugene/AndroidStudioProjects/OneViewRoomApp/app/src/main/res/drawable/ic_baseline_post_add_24.xml" value="0.3671875" />
+        <entry key="..\:/Users/Eugene/AndroidStudioProjects/OneViewRoomApp/app/src/main/res/layout/activity_custom_push.xml" value="0.33" />
+        <entry key="..\:/Users/Eugene/AndroidStudioProjects/OneViewRoomApp/app/src/main/res/layout/activity_drawer_base.xml" value="0.234375" />
+        <entry key="..\:/Users/Eugene/AndroidStudioProjects/OneViewRoomApp/app/src/main/res/layout/activity_main.xml" value="0.35104166666666664" />
+        <entry key="..\:/Users/Eugene/AndroidStudioProjects/OneViewRoomApp/app/src/main/res/layout/activity_note.xml" value="0.33" />
+        <entry key="..\:/Users/Eugene/AndroidStudioProjects/OneViewRoomApp/app/src/main/res/layout/content_note.xml" value="0.18125" />
+        <entry key="..\:/Users/Eugene/AndroidStudioProjects/OneViewRoomApp/app/src/main/res/layout/note_item_layout.xml" value="0.35104166666666664" />
+        <entry key="..\:/Users/Eugene/AndroidStudioProjects/OneViewRoomApp/app/src/main/res/layout/recycler_item.xml" value="0.35104166666666664" />
+        <entry key="..\:/Users/Eugene/AndroidStudioProjects/OneViewRoomApp/app/src/main/res/menu/example_menu.xml" value="0.22395833333333334" />
+        <entry key="..\:/Users/Eugene/AndroidStudioProjects/OneViewRoomApp/app/src/main/res/menu/main_drawer_menu.xml" value="0.22395833333333334" />
       </map>
     </option>
   </component>

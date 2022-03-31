@@ -5,6 +5,8 @@ import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.example.oneviewroomapp.dao.NoteDao;
+import com.example.oneviewroomapp.entities.Note;
 import com.example.oneviewroomapp.entities.Push;
 import com.example.oneviewroomapp.entities.Word;
 
@@ -16,6 +18,8 @@ public class WordViewModel extends AndroidViewModel {
     private final LiveData<List<Word>> listWord;
     private final LiveData<List<Word>> listAWord;
     private final LiveData<List<Push>> listPush;
+    private final LiveData<List<Note>> listNote;
+
 
     public WordViewModel(Application application) {
         super(application);
@@ -23,6 +27,7 @@ public class WordViewModel extends AndroidViewModel {
         listWord = repository.getAllWord();
         listPush = repository.getAllPush();
         listAWord = repository.getaWordList();
+        listNote = repository.getFromReposNote();
     }
 
     public LiveData<List<Word>> getAllWords() {
@@ -32,6 +37,15 @@ public class WordViewModel extends AndroidViewModel {
     public LiveData<List<Word>> getListAWord() {
         return listAWord;
     }
+
+    public LiveData<List<Note>> getListNote() {
+        return listNote;
+    }
+
+    public void insert(Note note) {
+        repository.insert(note);
+    }
+
 
     public LiveData<List<Push>> getAllPush() {
         return listPush;
