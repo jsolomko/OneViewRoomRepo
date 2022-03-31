@@ -4,11 +4,11 @@
         <item
             android:id="@+id/nav_custom"
             android:icon="@drawable/ic_baseline_dashboard_24"
-            android:title="custom"></item>
+            android:title="Новая тренеровка"></item>
 
         <item
             android:id="@+id/nav_custom2"
             android:icon="@drawable/ic_baseline_dashboard_24"
-            android:title="custom2"></item>
+            android:title="Статистика подтягиваний"></item>
     </group>
 </menu>

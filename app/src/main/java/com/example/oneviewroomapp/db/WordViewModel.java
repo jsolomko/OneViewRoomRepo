@@ -14,6 +14,7 @@ public class WordViewModel extends AndroidViewModel {
 
     private WordRepository repository;
     private final LiveData<List<Word>> listWord;
+    private final LiveData<List<Word>> listAWord;
     private final LiveData<List<Push>> listPush;
 
     public WordViewModel(Application application) {
@@ -21,10 +22,15 @@ public class WordViewModel extends AndroidViewModel {
         repository = new WordRepository(application);
         listWord = repository.getAllWord();
         listPush = repository.getAllPush();
+        listAWord = repository.getaWordList();
     }
 
     public LiveData<List<Word>> getAllWords() {
         return listWord;
+    }
+
+    public LiveData<List<Word>> getListAWord() {
+        return listAWord;
     }
 
     public LiveData<List<Push>> getAllPush() {
@@ -38,6 +44,7 @@ public class WordViewModel extends AndroidViewModel {
     public void insert(Push push) {
         repository.insert(push);
     }
+
     public void delete() {
         repository.delete();
     }
@@ -46,7 +53,7 @@ public class WordViewModel extends AndroidViewModel {
         repository.update(word);
     }
 
-    public void customUpdate(String date, int reps, int counter) {
-        repository.customUpdate(date, reps, counter);
+    public void customUpdate(String date, int reps, int counter, String comment) {
+        repository.customUpdate(date, reps, counter, comment);
     }
 }

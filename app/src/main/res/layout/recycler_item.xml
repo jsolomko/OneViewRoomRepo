@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#A8BBC8BB"
+    android:background="#A8ECF1EC"
     android:orientation="vertical"
     android:padding="10dp">
 
@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/pull_ups"
+            android:textColor="#000000"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -30,6 +31,7 @@
             android:layout_weight="1"
             android:gravity="center|end"
             android:text="Сумма"
+            android:textColor="#000000"
             android:textSize="30sp" />
 
 
@@ -46,6 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Повторения"
+            android:textColor="#000000"
             android:textSize="24sp" />
 
         <TextView
@@ -56,6 +59,7 @@
             android:layout_weight="1"
             android:gravity="center|center_vertical"
             android:text="@string/rep_counter"
+            android:textColor="#000000"
             android:textSize="18sp" />
 
     </LinearLayout>
@@ -65,6 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="коммент"
+        android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -75,13 +80,14 @@
         android:layout_weight="1"
         android:gravity="center|center_vertical"
         android:text="Дата"
+        android:textColor="#000000"
         android:textSize="18sp" />
 
     <View
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:background="#E91E63" />
+        android:background="@color/green" />
 
 
 </LinearLayout>

@@ -49,17 +49,7 @@ public class SettingActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.item_push:
-                Intent intent = new Intent(SettingActivity.this, PushActivity.class);
-                startActivity(intent);
-                return true;
-            case R.id.item2:
-                Intent i = new Intent(SettingActivity.this, SettingActivity.class);
-                startActivity(i);
-                return true;
-            case R.id.item3:
-                Toast.makeText(this, "PIP", Toast.LENGTH_SHORT).show();
-                return true;
+
         }
         return super.onOptionsItemSelected(item);
     }
