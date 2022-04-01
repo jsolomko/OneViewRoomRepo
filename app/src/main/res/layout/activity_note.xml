@@ -26,20 +26,10 @@
       android:layout_marginRight="16dp"
       android:layout_marginBottom="16dp"
       android:clickable="true"
+      android:onClick="onTabClick"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:rippleColor="#8F163388"
       app:srcCompat="@drawable/ic_baseline_post_add_24" />
 
-  <Button
-      android:id="@+id/button2"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="16dp"
-      android:layout_marginLeft="16dp"
-      android:layout_marginBottom="24dp"
-      android:onClick="testAddNote"
-      android:text="Button"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
+import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.oneviewroomapp.R;
@@ -13,40 +15,35 @@ import com.example.oneviewroomapp.entities.Note;
 
 import java.util.List;
 
-public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder> {
-    TextView tvDate, tvNote;
-    List<Note> noteList;
+public class NoteAdapter extends ListAdapter<Note, PostViewHolder> {
 
-    public NoteAdapter(List<Note> noteList) {
-        this.noteList = noteList;
-    }
 
-    public class NoteViewHolder extends RecyclerView.ViewHolder {
-        public NoteViewHolder(@NonNull View itemView) {
-            super(itemView);
-            tvDate = itemView.findViewById(R.id.tv_Note_Date);
-            tvNote = itemView.findViewById(R.id.tv_Note_aNote);
-        }
+    public NoteAdapter(@NonNull DiffUtil.ItemCallback<Note> diffCallback) {
+        super(diffCallback);
     }
 
     @NonNull
     @Override
-    public NoteAdapter.NoteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.note_item_layout, parent, false);
-        return new NoteViewHolder(view);
+    public PostViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return PostViewHolder.create(parent);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NoteViewHolder holder, int position) {
-        tvDate.setText(noteList.get(position).getDate());
-        tvNote.setText(noteList.get(position).getNote());
+    public void onBindViewHolder(@NonNull PostViewHolder holder, int position) {
+        Note currentPost = getItem(position);
+        holder.bind(currentPost.getDate(), currentPost.getNote());
     }
 
+    public static class NoteDiff extends DiffUtil.ItemCallback<Note> {
 
-    @Override
-    public int getItemCount() {
-        return noteList.size();
+        @Override
+        public boolean areItemsTheSame(@NonNull Note oldItem, @NonNull Note newItem) {
+            return oldItem == newItem;
+        }
+
+        @Override
+        public boolean areContentsTheSame(@NonNull Note oldItem, @NonNull Note newItem) {
+            return oldItem.getDate().equals(newItem.getDate());
+        }
     }
-
-
 }
